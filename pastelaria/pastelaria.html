@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Senhor Pastelito</h1>
+    <select name="recheio" id="recheio">
+        <option value="Frango">Frango</option>
+        <option value="Carne">Carne</option>
+        <option value="Queijo">Queijo</option>
+        <option value="Pizza">Pizza</option>
+    </select>
+    <br>
+    <input type="checkbox" name="cat" id="cat" value="Catupiry">
+    <label for="op1">Catupiry</label>
+    <input type="checkbox" name="ch" id="ch" value="Cheddar">
+    <label for="op2">Cheddar</label>
+    <br>
+    <input type="button" value="Revisar" onclick="mostraPedido(recheio.value, resumo,  cat, ch)">
+    <div id="resumo"></div>
+</body>
+</html>

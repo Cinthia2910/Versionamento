@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="energeticos.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="atualizar()">
+    <h1>UGV Atacados</h1>
+    <h3>Bem-vindo(a) ao nosso site!</h3>
+    <p>Aqui você tem os melhores produtos pelos melhores preços!</p>
+    <label for="escolha">Escolha a marca de energético desejada:</label>
+    <select id="escolha" onchange="selecao()">
+        <option value="bally">Bally</option>
+        <option value="monster">Monster</option>
+        <option value="redBull">Red Bull</option>
+    </select>
+    <br>
+    <div class="container">
+        <div class="card">
+            <h2>Área do Cliente</h2>
+            <div class="info-produto">
+                <p><strong>Produto:</strong> <span id="infoProduto"></span></p>
+                <p><strong>Preço:</strong> <span id="infoPreco"></span></p>
+                <p><strong>Estoque:</strong> <span id="infoEstoque"></span></p>
+            </div>
+            <label for="qtdCompra">Quantidade desejada:</label>
+            <input type="number" id="qtdCompra" min="1" placeholder="Informe a quantidade:">
+            <div>
+                <label for="formaPagamento">Forma de Pagamento:</label>
+                <select id="formaPagamento">
+                    <option value="avista">À Vista (5% de desconto)</option>
+                    <option value="1">Parcelado em 1x</option>
+                    <option value="2">Parcelado em 2x</option>
+                    <option value="3">Parcelado em 3x</option>
+                </select>
+            </div>
+            <button onclick="calcularSimulacao()">Calcular / Simular</button>
+            <button onclick="comprar()">Finalizar Compra</button>
+        </div>
+        <div class="card">
+            <h2>Painel do Administrador</h2>
+            <div class="info-produto info-adm">
+                <p><strong>Produto em Gerenciamento:</strong> <span id="produtoAdm"></span></p>
+                <p><strong>Estoque Atual:</strong> <span id="estoqueAdm"></span></p>
+            </div>
+            <div class="info-produto info-metricas">
+                <p><strong>Custo Total:</strong> <span id="custoTotal"></span></p>
+                <p><strong>Faturamento Previsto:</strong> <span id="faturar"></span></p>
+                <p><strong>Lucro Previsto:</strong> <span id="lucro"></span></p>
+            </div>
+
+            <hr>
+            <h3>Reposição de Estoque</h3>
+            <div>
+                <label for="quantAdd">Quantidade a adicionar:</label>
+                <input type="number" id="quantAdd" min="1" placeholder="Informe a quantidade:">
+            </div>
+            <button class="adm" onclick="adicionarEstoque()">Adicionar ao Estoque</button>
+        </div>
+    </div>
+</body>
+
+</html>

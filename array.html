@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let nome = 'Cinthia'
+        console.log(nome)
+        let nomes = ['Felipe', 'Salmo', 'Leticia']
+        console.log(nomes)
+        console.log(nomes[1])
+        let carros = ['Doblô', 'Kwid', 'Fusca', 'Gol']
+        function insere(){
+            if(carro.value != ''){
+            carros.push(carro.value)
+            atualizaArray()
+            document.getElementById('carro').value=''
+            document.getElementById('carro').focus()
+            } 
+            else{
+                alert('Digite o nome de um carro!')
+                document.getElementById('carro').focus()
+            }
+        }
+        function atualizaArray(){
+            document.getElementById('mostraCarros').innerHTML=carros
+        }
+        function remove(){
+            carros.pop()
+            atualizaArray()
+        }
+        function unshift(){
+              if(carro.value != ''){
+            carros.unshift(carro.value)
+            atualizaArray()
+            document.getElementById('carro').value=''
+            document.getElementById('carro').focus()
+            } 
+            else{
+                alert('Digite o nome de um carro!')
+                document.getElementById('carro').focus()
+            }
+        }
+        function removeShift(){
+            carros.shift()
+            atualizaArray()
+        }
+        function busca(){
+            let i = parseInt(indice.value)
+            let quantidade =(carros.length)-1
+            if(indice.value <= quantidade){
+                alert(carros[i])
+            } else{
+                alert('Índice inválido!')
+            }
+        }
+        function quantRegistros(){
+            
+        }
+    </script>
+</head>
+<body onload="atualizaArray()">
+    <div id="mostraCarros"></div>
+    <label for="carro">Digite o nome de um carro:</label>
+    <br>
+    <input type="text" name="carro" id="carro">
+    <input type="button" value="Inserir" onclick="insere()">
+    <input type="button" value="remover" onclick="remove()">
+    <input type="button" value="Inserir unshift" onclick="unshift()">
+    <input type="button" value="Remover shift" onclick="removeShift()">
+    <hr>
+    <label for="indice">Digite o número de índice:</label>
+    <input type="number" name="indice" id="indice">
+    <input type="button" value="buscar" onclick="busca()">
+    <br>
+    <input type="button" value="Quantos registros o array possui?" onclick="quantRegistros()">
+</body>
+</html>

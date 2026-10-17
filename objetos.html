@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let musica = {
+            nome: 'Inventor de amores',
+            artista: 'Gusttavo Lima',
+            ano: '2013',
+            duracao: '3:20',
+            album: 'Ao vivo',
+            generoMusical: 'Sertanejo,Sertanejo Universitário',
+            regravacoes: {
+                ano: 2015,
+                artistas: 'Chitãozinho e Xororó'
+            }
+        }
+        console.log(musica)
+        console.log(musica.nome)
+        console.log(musica.ano)
+        musica.album = 'Live'
+        console.log(musica.album)
+
+        function atualizaMusica(){
+            document.getElementById('mostraMusica').innerHTML= `Nome da música: ${musica.nome} <br> Nome do artista: ${musica.artista} <br> Ano: ${musica.ano} <br> Duração: ${musica.duracao} <br> Álbum: ${musica.album}` 
+        }
+
+        function mudaMusica(){
+            if(nomeMusica.value != ''){
+            musica.nome = nomeMusica.value
+            } else{
+                alert("Insira o nome da música!")
+            }
+        }
+
+        function idadeMusica(){
+            let now = new Date()
+            let anoAtual = now.getFullYear()
+            let anoMusica = musica.ano
+            idade = anoAtual - anoMusica
+            alert(idade)
+        }
+        function temporizador(){
+            let atual = new Date()
+            let horas = atual.getHours()
+            let minutos = atual.getMinutes()
+            let segundos = atual.getSeconds()
+            document.getElementById('mostraHora').innerHTML = (`${horas}:${minutos}:${segundos}`)
+        }
+        setTimeout(temporizador,1000)
+        setInterval(temporizador,1000)
+        function listarTodasAsPropriedades(o) {
+            var objectoASerInspecionado;
+            var resultado = [];
+
+            for (
+                objectoASerInspecionado = o;
+                objectoASerInspecionado !== null;
+                objectoASerInspecionado = Object.getPrototypeOf(objectoASerInspecionado)
+            ) {
+            resultado = resultado.concat(
+            Object.getOwnPropertyNames(objectoASerInspecionado),
+            );
+            }
+
+            return resultado;
+        }
+    </script>
+</head>
+<body onload="atualizaMusica()">
+    <div id="mostraHora"></div>
+    <div id="mostraMusica"></div>
+    <label for="nomeMusica">Nome da Música:</label>
+    <input type="text" name="nomeMusica" id="nomeMusica">
+    <input type="button" value="Mudar nome da música" onclick="mudaMusica()">
+    <input type="button" value="Idade da música">
+</body>
+</html>

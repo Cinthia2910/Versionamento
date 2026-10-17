@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #09097e;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 80px;
+    margin-bottom: 8px;
+    color: #feea33;
+}
+
+h2, h3 {
+    color: white;
+}
+
+p{
+    color: #09097e;
+}
+
+body > select#escolha {
+    max-width: 300px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+}
+
+.info-produto {
+    background-color: white;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border-left: 4px solid #09097e;
+    margin-bottom: 15px;
+}
+
+.info-produto p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+}
+
+.info-produto span {
+    color: #2c3e50;
+    font-weight: normal;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.card {
+    background: #cde6f8;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    min-width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card div {
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #1f6391;
+}
+
+.adm {
+    background-color: #2980b9;
+}
+
+.adm:hover {
+    background-color: #1f6391;
+}

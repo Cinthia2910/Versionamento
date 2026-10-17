@@ -1,0 +1,49 @@
+body{
+    background-color: black;
+    color: azure;
+}
+footer{
+    color: blueviolet;
+}
+div{
+    height: 60px;
+    width: 70px;
+    border: solid 2px grey;
+}
+section{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width:768px){
+    h1{
+        text-align: center;
+        color: #000;
+    }
+    p{
+        text-align: center;
+        color: #000;
+    }
+    footer{
+        align-items: center;
+    }
+    body{
+        background-color: #fff;
+    }
+}
+
+@media screen and (max-width:425px){
+    section{
+        flex-wrap: wrap;
+    }
+    h1{
+        text-align: center;
+    }
+    footer{
+        align-items: center;
+        color: black;
+    }
+    body{
+        background-color: #9502fd;
+    }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+    background-color: rgba(0, 0, 0, 0.297);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    min-height: 100vh;      
+    margin: 0;
+}
+.card {
+    background-color: rgba(122, 4, 151, 0.719);
+    border: 1px solid rgb(241, 14, 211);
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(122, 4, 151, 0.719);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; 
+    width: 100%;
+    max-width: 350px;
+    font-family: 'Courier New', Courier, monospace;
+}
+label{
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+input {
+    background-color: white;
+    border: 1px solid white;
+    padding: 8px;
+    border-radius: 4px;
+    outline: none;
+    width: 100%;
+    text-align: center;
+    color:rgba(122, 4, 151, 0.719);
+    
+}
+.mostraMusicas{
+    color: white;
+    justify-content: flex-start;
+    width: 100%;
+}
+p{
+    color: white;
+}
+h1{
+    color: palevioletred;
+}
+input:hover {
+  background-color: pink;
+}
+
+    </style>
+    <script>
+        let musicas = []
+        function atualizaArray(){
+            document.getElementById('contador').innerText = `Total de Músicas: ${musicas.length}/10`
+            document.getElementById('mostraMusicas').innerHTML=musicas.join('<br>')
+        }
+        function adicionar(){
+            if(musicas.length >= 10){
+                alert("Você atingiu o limite de músicas nessa playlist!")
+            } 
+            else if(document.getElementById('musica').value != ''){
+                musicas.push(musica.value)
+                atualizaArray()
+                document.getElementById('musica').value=''
+                document.getElementById('musica').focus()
+            } 
+            else{
+                alert('Digite uma musica!')
+                document.getElementById('musica').focus()
+            }
+        }
+        function tocarMusica(){
+            if (musicas.length === 0) {
+                alert("Sua playlist está vazia!")
+            } else{
+                let musicaTocando = musicas.shift()
+                atualizaArray()
+                alert("Você está ouvindo: " + musicaTocando)
+            }
+        }
+        function limpaPlaylist(){
+            while(musicas.length != 0){
+                let d = musicas.shift()
+                atualizaArray()
+           }
+            alert("Você esvaziou sua playlist!")
+        }
+        function ordem(){
+            document.getElementById('mostraMusicas').innerHTML= musicas.sort().join('<br>')
+        }
+        function inverte(){
+            document.getElementById('mostraMusicas').innerHTML= musicas.reverse().join('<br>')
+        }
+        function pesquisa(){
+            if(search.value != ''){
+            if(musicas.includes(search.value)){
+                alert("Música encontrada!")
+                document.getElementById('search').focus()
+            } else{
+                alert("Música não encontrada!")
+                document.getElementById('search').focus()
+                }
+            }else{
+                alert("Você precisa digitar uma música primeiro!")
+            }
+        }
+    </script>
+</head>
+<body onload="atualizaArray()">
+    <div class="card">
+    <h1>Playlist</h1>
+    <p class="contador" id="contador"></p>
+    <div class="mostraMusicas" id="mostraMusicas"></div>
+    <label for="musica">Insira sua música:</label>
+    <input type="text" name="musica" id="musica">
+    <input type="button" value="Adicionar" onkeydown="adicionar()" onclick="adicionar()">
+    <input type="button" value="Ouvir" onclick="tocarMusica()">
+    <input type="button" value="Limpar playlist" id="d" onclick="limpaPlaylist()">
+    <input type="button" value="Ordenar playlist" onclick="ordem()">
+    <input type="button" value="Inverter playlist" onclick="inverte()">
+    <label for="musicaPesquisa">Digite a música que deseja pesquisar:</label>
+    <input type="text" id="search" >
+    <input type="button" value="Pesquisar Música" onclick="pesquisa()">
+    </div>
+</body>
+</html>
