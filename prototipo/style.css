@@ -1,0 +1,119 @@
+:root {
+  --Cor: #025FAA;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  width: 390px;
+  height: 844px;
+  padding-top: 290px;
+  padding-bottom: 43px;
+  padding-left: 35px;
+  padding-right: 35px;
+  background: var(--Cor);
+  overflow: hidden;
+  outline: 1px black solid;
+  outline-offset: -1px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 97px;
+  display: inline-flex;
+  box-sizing: border-box;
+}
+
+.card-usuario {
+  width: 320px;
+  height: 133px;
+  position: relative;
+  overflow: hidden;
+  outline: 1px white solid;
+  outline-offset: -1px;
+}
+
+.label-cc {
+  left: 79px;
+  top: 67px;
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.label-ag {
+  left: 79px;
+  top: 32px;
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.dado-ag {
+  left: 115px;
+  top: 37px;
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.dado-cc {
+  left: 115px;
+  top: 74px;
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.avatar {
+  width: 49px;
+  height: 48px;
+  left: 14px;
+  top: 36px;
+  position: absolute;
+  background: white;
+  overflow: hidden;
+  border-radius: 100px;
+  outline: 1px white solid;
+  outline-offset: -1px;
+}
+
+.avatar-icon {
+  width: 34.53px;
+  height: 30.76px;
+  left: 7.24px;
+  top: 12px;
+  position: absolute;
+  background: black;
+}
+
+.btn-opcao {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 400;
+  word-wrap: break-word;
+}

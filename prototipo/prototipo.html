@@ -1,24 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protótipo</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div style="width: 100%; height: 100%; padding-top: 290px; padding-bottom: 43px; padding-left: 35px; padding-right: 35px; background: var(--Cor, #025FAA); overflow: hidden; outline: 1px black solid; outline-offset: -1px; flex-direction: column; justify-content: flex-start; align-items: center; gap: 97px; display: inline-flex">
-    <div style="width: 320px; height: 133px; position: relative; overflow: hidden; outline: 1px white solid; outline-offset: -1px">
-        <div style="left: 79px; top: 67px; position: absolute; color: white; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">Cc</div>
-        <div style="left: 79px; top: 32px; position: absolute; color: white; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">Ag</div>
-        <div style="left: 115px; top: 37px; position: absolute; color: white; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">*********</div>
-        <div style="left: 115px; top: 74px; position: absolute; color: white; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">*********</div>
-        <div data-style="Avatar" style="width: 49px; height: 48px; left: 14px; top: 36px; position: absolute; background: white; border-radius: 100px; outline: 1px white solid; outline-offset: -1px">
-            <div style="width: 34.53px; height: 30.76px; left: 7.24px; top: 12px; position: absolute; background: black"></div>
-        </div>
+<body class="flex justify-center items-center min-h-screen bg-gray-100 m-0 font-sans">
+
+  <div class="w-[390px] h-[844px] pt-[290px] pb-[43px] px-[35px] bg-[#025FAA] overflow-hidden outline outline-1 outline-black outline-offset-[-1px] flex flex-col justify-start items-center gap-[97px] box-border relative">
+    
+    <div class="absolute top-[100px] w-24 h-24 flex items-center justify-center">
+      <img src="https://play-lh.googleusercontent.com/OYu6L-gxAsF73bsyv21JfV1PrQA02g5fF11QwXaYlR0FjGaSEkjdyQTb9Lsm50AsfHpL282WvmzwZZAfWWa7_Q" alt="Logo do app da Caixa Econômica Federal" class="w-full h-full object-contain">
     </div>
-    <div style="color: white; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">Criar conta</div>
-    <div style="color: white; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">Recuperar senha</div>
-    <div style="color: white; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">Ajuda</div>
-</div>
+
+    <div class="w-[320px] h-[133px] relative overflow-hidden outline outline-1 outline-white outline-offset-[-1px]" aria-label="Informações da conta do usuário">
+      <div class="absolute left-[79px] top-[67px] text-white text-2xl font-normal">Cc</div>
+      <div class="absolute left-[79px] top-[32px] text-white text-2xl font-normal">Ag</div>
+      <div class="absolute left-[115px] top-[37px] text-white text-2xl font-normal">*********</div>
+      <div class="absolute left-[115px] top-[74px] text-white text-2xl font-normal">*********</div>
+      
+      <div class="absolute left-[14px] top-[36px] w-[49px] h-[48px] bg-white overflow-hidden rounded-full outline outline-1 outline-white outline-offset-[-1px] flex items-center justify-center" data-style="Avatar" role="img" aria-label="Avatar do usuário">
+        <span class="sr-only">Ícone do usuário</span>
+        <svg class="w-7 h-7 text-black" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+        </svg>
+      </div>
+    </div>
+
+    <button class="bg-transparent border-none p-0 cursor-pointer text-white text-2xl font-normal hover:opacity-80 transition-opacity" onclick="criarConta()" aria-label="Criar uma nova conta">Criar conta</button>
+    <button class="bg-transparent border-none p-0 cursor-pointer text-white text-2xl font-normal hover:opacity-80 transition-opacity" onclick="recuperarSenha()" aria-label="Recuperar senha da conta">Recuperar senha</button>
+    <button class="bg-transparent border-none p-0 cursor-pointer text-white text-2xl font-normal hover:opacity-80 transition-opacity" onclick="abrirAjuda()" aria-label="Abrir central de ajuda">Ajuda</button>
+  </div>
+
+  <script>
+    function criarConta() {
+      alert("Redirecionando para Criar Conta...");
+    }
+
+    function recuperarSenha() {
+      alert("Redirecionando para Recuperar Senha...");
+    }
+
+    function abrirAjuda() {
+      alert("Redirecionando para Ajuda...");
+    }
+  </script>
 </body>
 </html>
